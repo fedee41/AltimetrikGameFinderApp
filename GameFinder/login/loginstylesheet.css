@@ -1,5 +1,5 @@
 body{
-    background: url(/img/BG.png);
+    background: url(./img/BG.png);
     position: absolute;
     width: 1494px;
     height: 1062px;
@@ -86,30 +86,44 @@ padding: 10.58px 16px 10.57px 16px;
     display: flex;
     width: 362px;
     height: 20px;
-    margin: 0px 50px 0px 50px;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: center;
-
+    padding: 0px 50px 0px 50px;
+    justify-content: space-between;
 }
-input[type="checkbox"]{
-    margin: 0px;
+.checkbox{
+    display: inline-flex;
+    align-items: center; 
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 14px; 
+}
+
+.checkbox__input{
+    display: none;
+}
+
+.checkbox__box{
+    margin-right: 19px;
     width: 20px;
     height: 20px;
-}
-
-label{
-    padding-left: 16px;
-    color: #FFFFFF;
-    font-family: 'Exo';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
+    border: 1.5px solid #FFFFFF;
+    border-radius: 4px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+.checkbox__box::after{
+    content: '\2714';
+    color: transparent;
+}
+.checkbox__input:checked + .checkbox__box {
+    color: #FFFFFF;
+    border-color: #36B972;
+    background: #36B972;
+    border-radius: 4px;
 }
 
-a{
+a.forgotpassword , a.now{
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
@@ -118,7 +132,6 @@ a{
     color: #5FE19B;
 }
 a.forgotpassword{
-    padding-left: 105.38px;
     display: flex;
     align-items: center;
     text-align: right;
@@ -162,4 +175,51 @@ input[type=submit]{
     line-height: 19px;
     color: #FFFFFF;
     padding: 0px 25px 0px 25px;
+}
+.loginoptions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+input[type=button]{
+    width: 362px;
+    height: 47px;
+    margin: 12px 50px 12px 50px;
+    box-sizing: border-box;
+    font-family: 'Exo';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    border-radius: 6px;
+}
+.loginoptions{
+    display: flex;
+}
+.socialfacebook, .socialtwitter, .socialgoogle{
+    width: 362px;
+    height: 47px;
+    display:flex;
+    align-items: center;
+    border: 2px solid #FFFFFF;
+    border-radius: 6px;
+    background: transparent;
+    font-family: 'Exo';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.fb{
+    padding: 0px 14px 0px 61px;
+}
+.tw{
+    padding: 0px 23px 0px 61px;
+}
+.google{
+    padding: 0px 11px 0px 61px;
 }

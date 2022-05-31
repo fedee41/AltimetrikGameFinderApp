@@ -1,11 +1,78 @@
 body{
-    background: url(./img/BG.png);
+    /*background: url(./img/BG.png);*/
+    background-color: #000;
     position: absolute;
-    width: 1494px;
-    height: 1062px;
+    width: 1440px;
+    height: 1024px;
     left: 0px;
     top: 0px;
+    margin: 0px;
 }
+/*Carrousel*/
+.slider{
+    width: 1440px;
+    height: 1024px;
+    overflow: hidden;
+}
+.slides{
+    width: 500%;
+    height: 1024px;
+    display: flex;
+}
+.slides input{
+    display: none;
+}
+.slide{
+    width: 20%;
+    transition: 2s;
+}
+.slide img{
+  width: 1440px;
+    
+}
+.navigation-manual{
+    position: absolute;
+    display: flex;
+    width: 100px;
+    height: 27px;
+    top: 93%;
+    left: 50%;
+    background: #515151;
+    border-radius: 18px;
+    align-items: center;
+    justify-content: center;
+}
+.manual-btn{
+    display: flex;
+    border: 0.5px solid #FFFFFF;
+    border-radius: 7px;
+    background: #FFFFFF;
+    width: 6.5px;
+    height: 6.5px;
+    transition: 1s;
+    opacity: 0.25;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+.manual-btn:not(:last-child){
+    margin-right: 8px;
+}
+#radio1:checked ~ .first{
+    margin-left: 0%;
+    opacity: 1;
+}
+#radio2:checked ~ .first{
+    margin-left: -20%;
+}
+#radio3:checked ~ .first{
+    margin-left: -40%;
+    opacity: 1;
+}
+#radio4:checked ~ .first{
+    margin-left: -60%;
+    opacity: 1;
+}
+/*icon Game finder*/
 .bs-icon{
     position: absolute;
     width: 322px;
@@ -20,15 +87,72 @@ body{
     top: 21.62%;
     bottom: 21.62%;
 }
+/*toggle botton*/
+.togglebox{
+    position: absolute;
+    right: 100px;
+    top: 44.27px;
+}
+input[type="checkbox"]{
+    position: relative;
+    width: 90px;
+    height: 40px;
+    background: #E1E1E4;
+    border-radius: 48px;
+    -webkit-appearance: none;
+    outline: none;
+    transition: .2s;
+}
+input:checked[type="checkbox"]{
+   background: #5F81FB; 
+}
+input[type="checkbox"]::before{
+    z-index: 2;
+    position: absolute;
+    content: "";
+    top: 5px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    transform: scale(1.1);
+    transition: 0.4ms;
+}   
+input:checked[type="checkbox"]::before{
+    left: 50px;
+}
+.toggle{
+    position: relative;
+    display: inline;
+}
+.toggle label{
+    position: absolute;
+    font-family: 'Exo';
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 800;
+}
+.onbtn{
+    bottom: 15px;
+    left: 15px;
+    color: #FFFFFF;
+}
+.offbtn{
+    bottom: 15px;
+    right: 14px;
+    color: #939393;
+}
 
+/*login*/
 .login_conteiner{
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 12px;
     position: absolute;
     width: 462px;
     height: 702px;
-    left: 932px;
     top: 178px;
+    right: 100px;
     display: flex;  
     flex-direction: column;
     font-family: 'Exo';
@@ -89,38 +213,44 @@ padding: 10.58px 16px 10.57px 16px;
     padding: 0px 50px 0px 50px;
     justify-content: space-between;
 }
-.checkbox{
-    display: inline-flex;
-    align-items: center; 
+
+/*checkbox*/
+.checkbox-conteiner{
+    display: flex;
+}
+.checkbox-conteiner label{
+    display: flex;
     color: #FFFFFF;
+    font-family: 'Exo';
+    font-style: normal;
     font-weight: 400;
-    font-size: 14px; 
+    font-size: 14px;
+    line-height: 19px;
+}
+.checkbox-conteiner input[type='checkbox']{
+    opacity: 0;
+    position:absolute;
 }
 
-.checkbox__input{
-    display: none;
-}
-
-.checkbox__box{
-    margin-right: 19px;
+.checkbox-conteiner label::before{
+    content: '';
     width: 20px;
     height: 20px;
     border: 1.5px solid #FFFFFF;
     border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-right: 19px;
     background: transparent;
 }
-.checkbox__box::after{
-    content: '\2714';
-    color: transparent;
-}
-.checkbox__input:checked + .checkbox__box {
+
+.checkbox-conteiner input[type='checkbox']:checked + label::before{
+    content: '\002714';
     color: #FFFFFF;
     border-color: #36B972;
-    background: #36B972;
+    background-color: #36B972;
     border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
 }
 
 a.forgotpassword , a.now{
@@ -195,6 +325,7 @@ input[type=button]{
     border: 2px solid #FFFFFF;
     border-radius: 6px;
 }
+/*Social Media option for login*/
 .loginoptions{
     display: flex;
 }
@@ -213,6 +344,7 @@ input[type=button]{
     line-height: 24px;
     color: #FFFFFF;
     text-decoration: none;
+    margin-bottom: 16px;
 }
 .fb{
     padding: 0px 14px 0px 61px;
@@ -221,5 +353,5 @@ input[type=button]{
     padding: 0px 23px 0px 61px;
 }
 .google{
-    padding: 0px 11px 0px 61px;
+    padding: 0px 23px 0px 61px;
 }

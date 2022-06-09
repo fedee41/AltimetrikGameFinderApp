@@ -1,17 +1,22 @@
-const big = document.querySelector('.big')
-const dot = document.querySelectorAll('.dot')
+const slider = document.querySelector("#slides");
+let sliderSelection = document.querySelectorAll(".slide");
+let sliderSelectionLast = sliderSelection[sliderSelection.length -1];
+const btnLeft = document.querySelector("#btn-le");
+const btnRight = document.querySelector("#btn-ri");
 
-dot.forEach( (eachdot , i)=> {
-    dot[i].addEventListener('click', ()=> {
+slider.insertAdjacentElement('afterbegin', sliderSelectionLast);
 
-        let position = i
-        let operation = position * -50
+function Nextbtn(){
+    let sliderSelectionFirst = document.querySelectorAll(".slide")[0];
+    slider.getElementsByClassName.marginLeft = "-200%";
+    slider.getElementsByClassName.transition = "all 0.5s";
+    setTimeout(function(){
+        slider.style.transition = "none";
+        slider.insertAdjacentElement('beforeend' , sliderSelectionFirst);
+        slider.style.marginLeft = "-100%";
+    },500);
+}
 
-        big.style.transform = 'translateX(${ operation }%)'
-
-        dot.forEach( ( eachdot, i)=> {
-            dot[i].classList.remove('active')
-        })
-        dot[i].classList.add('active')
-    })
-})
+btnRight.addEventListener('click', function(){
+    Nextbtn();
+});

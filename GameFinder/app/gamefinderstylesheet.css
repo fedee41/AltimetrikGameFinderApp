@@ -1,0 +1,79 @@
+
+*{
+    font-family: 'Exo';
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+
+}
+:root{
+    --dark-color: #000000;
+    --light-color: #E5E5E5;
+    --text-color-dark: #FFFFFF;
+    --text-color-ligth: #000000;
+}
+body{
+    background: var(--dark-color);
+}
+/*nav bar*/
+.conteiner{
+    max-width: 1440px;
+    margin:auto;
+    width: 100%;
+    display: flex;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 96px;
+    background: linear-gradient(180deg, #5FE19B 0%, #36B972 50%, #0EA152 100%);
+    box-shadow: 1px -3px 36px rgba(0, 0, 0, 0.5);
+}
+.nav-icon{
+    display: flex;
+    align-items: center;
+}
+.logo-gamefinder{
+    margin-left: 39.95px;
+}
+.search{
+    width: 362px;
+    height: 47px;
+}
+.log_out{
+    color: #FFFFFF;
+    font-size: 20px;
+    margin-right: 16px;
+    text-decoration: none;
+}
+.porfile{
+    display: flex;
+    height: 48px;
+    width: 48px;
+    margin-right: 23px;
+    border-radius: 50%;
+    border: solid 2px #FFFFFF;
+    background-color: rgb(129, 129, 129);
+    align-items: center;
+    justify-content: center;
+}
+.top-row{
+    position: fixed;
+    margin-top: 94px;
+    height: 141px;
+    max-width: 1440px;
+    width: 100%;
+}
+h1, p{
+    color: var(--text-color-dark);
+}

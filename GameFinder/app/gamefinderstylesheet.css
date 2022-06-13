@@ -25,7 +25,7 @@ body{
     display: flex;
 }
 header{
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
@@ -39,17 +39,18 @@ header{
     background: linear-gradient(180deg, #5FE19B 0%, #36B972 50%, #0EA152 100%);
     box-shadow: 1px -3px 36px rgba(0, 0, 0, 0.5);
 }
-.nav-icon{
-    display: flex;
+.nav-icon{      /*icon of gamefinder*/
+    display: flex;      
     align-items: center;
 }
 .logo-gamefinder{
     margin-left: 39.95px;
 }
-.search{
+.search{    /*search bar*/
     width: 362px;
     height: 47px;
 }
+/*Porfile options*/
 .log_out{
     color: #FFFFFF;
     font-size: 20px;
@@ -67,13 +68,229 @@ header{
     align-items: center;
     justify-content: center;
 }
-.top-row{
-    position: fixed;
-    margin-top: 94px;
-    height: 141px;
-    max-width: 1440px;
+
+section{
     width: 100%;
 }
-h1, p{
+
+/*title and buttons */
+.top-row{
+    position: sticky;
+    display: flex;
+    height: 141px;
+    width: 100%;
+}
+.left{  /*title*/
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+}
+
+h1, .left p{
     color: var(--text-color-dark);
+    margin-left: 2.78%;
+}
+h1{
+    margin-top: 24px;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 64px;
+}
+.left p{
+    margin-top: 2px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+}
+.button-rigth{  /*buttons*/
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.togglebox{
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 40px;
+    margin-top: 27px;
+}
+input[type="checkbox"]{
+    position: relative;
+    width: 40px;
+    height: 22px;
+    background: #E1E1E4;
+    border-radius: 23px;
+    -webkit-appearance: none;
+    outline: none;
+    transition: .2s;
+}
+input:checked[type="checkbox"]{
+   background: #5F81FB; 
+}
+input[type="checkbox"]::before{
+    z-index: 2;
+    position: absolute;
+    content: "";
+    margin-top: 2px;
+    margin-left: 2px;
+    width: 18px;
+    height: 18px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    transform: scale(1.1);
+    transition: 0.4ms;
+}   
+input:checked[type="checkbox"]::before{
+    left: 18px;
+}
+.toggle{
+    position: relative;
+    display: inline;
+}
+.toggle label{
+    position: absolute;
+    font-family: 'Exo';
+    font-style: normal;
+    font-size: 8px;
+    font-weight: 200;
+}
+.onbtn{
+    top: 6px;
+    left:  2px;
+    color: #FFFFFF;
+}
+.offbtn{
+    top: 6px;
+    right: 2px;
+    color: #939393;
+}
+.p_dark{
+    color: var(--text-color-dark);
+    font-size: 15px;
+    line-height: 20px;
+    margin-right: 13px;
+}
+.button-view{
+    display:flex;
+    justify-content: space-between;
+    margin-top: 17px;
+    margin-right: 40px;
+    width: 90px;
+    
+}
+.column, .list{
+    width: 40px;
+    height: 40px;
+    background: #515151;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.games-and-aside{
+    display: flex;
+}
+/*menu*/
+
+.left-column{
+    width: 17.4%;
+    height: 600px;
+}
+.home-menu{
+    margin-left: 40px;
+}
+ul{
+list-style: none;
+}
+.li-pp{
+    margin-bottom: 14px;
+}
+.li-ss{
+    margin-bottom: 2px;
+}
+.menu-pp, .menu-ss{
+    text-decoration: none;
+    color: var(--text-color-dark);
+}
+.menu-pp{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+}
+.menu-ss{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24p;
+}
+.svgone, .svgtwo, .svgfive{
+    margin-right: 11px;
+}
+.svgthree, .svgfour{
+    margin-right: 6px;
+}
+
+/*Games Box*/
+
+
+.conteiner-games{
+    width: 82.6%;
+}
+.section-box{
+    float: left;
+    width: 363px;
+    height: 314px;
+    background: #303030;
+    border-radius: 12px;
+    margin: 12px;
+}
+.section-box img{
+    height: 181px;
+    object-fit: contain;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+.box-text{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.box-title, .box-date, .box-genres{
+    display: flex;
+    color: var(--text-color-dark);
+}
+.box-title{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    display: flex;
+    margin: 10px 14px 10px 14px;
+    justify-content: space-between;
+}
+.box-date{
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    margin: 6px 14px 4px 14px;
+    justify-content: space-between;
+}
+.date{
+    font-size: 14px;
+    line-height: 19px;
+    color: #939393;
+    margin-right: 20px;
+}
+.box-aux{
+    display: flex;
+}
+.box-genres{
+    display: flex;
+    margin: 4px 14px 0px 14px;
 }

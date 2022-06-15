@@ -2,35 +2,27 @@ body{
     /*background: url(./img/BG.png);*/
     background-color: #000;
     position: absolute;
-    width: 1440px;
-    height: 1024px;
-    left: 0px;
-    top: 0px;
-    margin: 0px;
-}
-/*Carrousel*/
-.slider{
-    width: 1440px;
-    height: 1024px;
-    overflow: hidden;
-}
-.slides{
-    width: 500%;
-    height: 1024px;
-    display: flex;
-    margin-left: -100%;
-}
-.slides input{
-    display: none;
-}
-.slide{
-    width: 20%;
-}
-.slide img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    left: 0;
+    top: 0;
+    margin: 0;
 }
+/*Carrousel*/
+.slides{
+    position: relative;
+}
+.slide{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.slide img{
+width: 100%;
+height: 100%;
+
+}
+
 .navigation-manual{
     position: absolute;
     display: flex;
@@ -55,24 +47,7 @@ body{
     opacity: 0.25;
     margin-left: 4px;
     margin-right: 4px;
-}
-.manual-btn:not(:last-child){
-    margin-right: 8px;
-}
-.manual-btn::after{
-    opacity: 1;
-}
-#radio1:checked ~ .first{
-    margin-left: 0%;
-}
-#radio2:checked ~ .first{
-    margin-left: -20%;
-}
-#radio3:checked ~ .first{
-    margin-left: -40%;
-}
-#radio4:checked ~ .first{
-    margin-left: -60%;
+    cursor: pointer;
 }
 .slide__btn{
     position: absolute;
@@ -89,11 +64,17 @@ body{
     
 }
 .slide__btn--right{
+    cursor: pointer;
     right: 25px;
 }
 .slide__btn--left{
+    cursor: pointer;
     left: 25px;
 }
+.active, .dot:hover {
+    background-color: #FFFFFF;
+  }
+
 /*icon Game finder*/
 .bs-icon{
     position: absolute;
@@ -235,6 +216,21 @@ padding: 10.58px 16px 10.57px 16px;
     padding: 0px 50px 0px 50px;
     justify-content: space-between;
 }
+/*Validation style*/
+.validationemail{
+    width: 362px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Exo';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    margin-left: 50px;
+    background-color: rgba(226, 2, 2, 0.4);
+    margin-bottom: 5px;
+    border-radius: 12px; 
+}
+
 
 /*checkbox*/
 .checkbox-conteiner{

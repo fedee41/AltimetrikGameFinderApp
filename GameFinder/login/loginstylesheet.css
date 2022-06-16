@@ -7,20 +7,27 @@ body{
     left: 0;
     top: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 /*Carrousel*/
-.slides{
-    position: relative;
-}
-.slide{
+.slider{
     width: 100%;
     height: 100%;
+}
+.slides{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.slide{
     display: none;
+    width: 100%;
+    height: 100%;
 }
 .slide img{
-width: 100%;
-height: 100%;
-
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .navigation-manual{
@@ -35,6 +42,11 @@ height: 100%;
     border-radius: 18px;
     align-items: center;
     justify-content: center;
+}
+.navigation-manual button{
+    border-radius: 50%;
+    padding: 2px;
+
 }
 .manual-btn{
     display: flex;

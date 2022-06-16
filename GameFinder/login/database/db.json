@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "fede@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "2",
+      "email": "fede2@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "3",
+      "email": "fede3@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "4",
+      "email": "fede4@gmail.com",
+      "password": "1234"
+    },
+    {
+      "email": "f@gmail.com",
+      "password": "$2a$10$u4uRrKM8elk.eP8.uMwsGejD1LycR4JPMBTb04gZYTCGGwgerzaW.",
+      "id": "Qxhk-6i"
+    }
+  ]
+}

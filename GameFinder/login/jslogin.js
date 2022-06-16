@@ -2,7 +2,7 @@ let slideIndex = 1;
 showSlides(slideIndex);
 
 function plusSlides(n) {
-  showSlides(slideIndex += n);
+  showSlides(slideIndex = slideIndex + n);
 }
 
 function currentSlide(n) {
@@ -15,6 +15,7 @@ function showSlides(n) {
   let dots = document.getElementsByClassName("manual-btn");
   if (n > slides.length) {
       slideIndex = 1;
+      dots[slideIndex+2].style.opacity = "0.25";
     }    
   if (n < 1) {
       slideIndex = slides.length
@@ -27,6 +28,8 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
+  dots[slideIndex-1].style.opacity = "1";
+  dots[slideIndex-2].style.opacity = "0.25";
 }
 
 
@@ -80,8 +83,8 @@ function validationpassword(){
         text.innerHTML = "Passoword length must be between (8-14)";
         text.style.color = "#ffffff";
         }
-
-    if(password.match(lowerCaseLetters)) {
+    }
+    /*if(password.match(lowerCaseLetters)) {
         form.classList.remove("invalid");
         form.classList.add("valid");
             text.innerHTML = "";
@@ -119,4 +122,4 @@ function validationpassword(){
         form.classList.add("invalid");
         text.innerHTML = "Passoword must have numbers";
         text.style.color = "#ffffff";
-    }}
+    }}*/

@@ -247,9 +247,10 @@ list-style: none;
     background: #303030;
     border-radius: 12px;
     margin: 12px;
+    border-width: 0px;
 }
 .section-box img{
-    height: 181px;
+    height: 179px;
     object-fit: contain;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;

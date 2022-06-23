@@ -60,68 +60,35 @@ function validationpassword(){
     var form = document.getElementById("form");
     var password = document.getElementById("password").value;
     var text = document.getElementById("validationpassword");
-    var lowerCaseLetters = /[a-z]/g;
-    var upperCaseLetters = /[A-Z]/g;
-    var numbers = /[0-9]/g;
+    var pattern = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,14}$/;
 
-    if(password.length >= 8){
-        if (password.length <= 14){
-            form.classList.add("valid");
-            form.classList.remove("invalid");
-            text.innerHTML = "";
-        }
-        else {
-            form.classList.remove("valid")
-            form.classList.add("invalid")
-            text.innerHTML = "Passoword length must be between (8-14)";
-            text.style.color = "#ffffff";
-        }
+    if (password.match(pattern)){
+        form.classList.add("valid");
+        form.classList.remove("invalid");
+        text.innerHTML = "";
     }
     else{
         form.classList.remove("valid")
         form.classList.add("invalid")
-        text.innerHTML = "Passoword length must be between (8-14)";
-        text.style.color = "#ffffff";
-        }
-    }
-    /*if(password.match(lowerCaseLetters)) {
-        form.classList.remove("invalid");
-        form.classList.add("valid");
-            text.innerHTML = "";
-    } 
-    else {
-    form.classList.remove("valid");
-    form.classList.add("invalid");
-        text.innerHTML = "Passoword must have lower case letters";
+        text.innerHTML = "The password must have: (8 to 14) characters, 1 digit, 1 lowercase letter, 1 uppercase letter."
         text.style.color = "#ffffff";
     }
+}
 
-    // Validate capital letters
+//Password hide/show
+function seepassword(){
+    var pass = document.getElementById("password");
+    var hide = document.getElementById ("hide1");
+    var show = document.getElementById ("hide2");
 
-    if(password.match(upperCaseLetters)) {
-        form.classList.remove("invalid");
-        form.classList.add("valid");
-        text.innerHTML = "";
-    } 
-    else {
-        form.classList.remove("valid");
-        form.classList.add("invalid");
-        text.innerHTML = "Passoword must have capital letters";
-        text.style.color = "#ffffff";
+    if (pass.type === 'password'){
+        pass.type = "text";
+        show.style.display = "block";
+        hide.style.display = "none";
     }
-
-    // Validate numbers
-    if(password.match(numbers)) {
-        form.classList.remove("invalid");
-        form.classList.add("valid");
-        text.innerHTML = "";
-        text.style.color = "#ffffff";
-    } else 
-    {
-        form.classList.remove("valid");
-        form.classList.add("invalid");
-        text.innerHTML = "Passoword must have numbers";
-        text.style.color = "#ffffff";
-    }}*/
-
-    
+    else{
+        pass.type = "password";
+        show.style.display = "none";
+        hide.style.display = "block";
+    }
+}

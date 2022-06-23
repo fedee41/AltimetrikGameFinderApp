@@ -196,29 +196,42 @@ input:checked[type="checkbox"]::before{
 }
 .email, .password{
     display: flex;
+    align-items: center;
     font-family: 'Exo';
     font-style: normal;
     font-size: 15px;
     font-weight: 400;
+    background: #FFFFFF;
     border-radius: 4px;
-}
-.email{
     margin: 0px 50px 16px 50px;
     width: 362px;
     height: 47px;
-    padding: 0px;
+    line-height: 20px;
+    
 }
-.email::placeholder{
-padding: 10.58px 16px 10.57px 16px;
+.emailinput, .passwordinput{
+    border: none;
+    background: transparent;
+    outline: none;
 }
-.password{
-    margin: 0px 50px 16px 50px;
-    width: 362px;
-    height: 47px;
-    padding: 0px;
+.emailinput{
+    width: 330px;
+    margin-left: 16px;
 }
-.password::placeholder{
-    padding: 10.58px 40px 10.57px 16px;
+.passwordinput{
+    width: 306px;
+    margin-left: 16px;
+}
+
+.emailinput, .passwordinput ::placeholder{
+    color: #939393;
+}
+.eye{
+    position: absolute;
+    right: 66px;
+}
+#hide2{
+    display: none;
 }
 .remember{
     display: flex;

@@ -250,8 +250,9 @@ list-style: none;
     border-width: 0px;
 }
 .section-box img{
+    width: 362px;
     height: 179px;
-    object-fit: contain;
+    object-fit: cover;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
 }
@@ -264,6 +265,9 @@ list-style: none;
 .box-title, .box-date, .box-genres{
     display: flex;
     color: var(--text-color-dark);
+}
+.fav{
+    color: #36B972;
 }
 .box-title{
     font-weight: 700;

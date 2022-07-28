@@ -279,12 +279,11 @@ list-style: none;
 }
 .box-date{
     display: flex;
-    align-items: center;
+    flex-direction: column;
     font-weight: 400;
     font-size: 14px;
     line-height: 19px;
     margin: 6px 14px 4px 14px;
-    justify-content: space-between;
 }
 .date{
     font-size: 14px;
@@ -294,8 +293,12 @@ list-style: none;
 }
 .box-aux{
     display: flex;
+    justify-content: space-between;
 }
 .box-genres{
     display: flex;
     margin: 4px 14px 0px 14px;
 }
+/*#svg_pc{
+    display: none;
+}*/

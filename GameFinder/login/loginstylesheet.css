@@ -101,6 +101,19 @@ body{
     top: 21.62%;
     bottom: 21.62%;
 }
+/*snackbar*/
+.snackbar{
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 30px;
+    top: 100px;
+    background: #aa0000;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 20px;
+}
 /*toggle botton*/
 .togglebox{
     position: absolute;

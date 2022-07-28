@@ -1,3 +1,4 @@
+//Carrousel
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -33,7 +34,7 @@ function showSlides(n) {
 }
 
 
-//email validation
+//email validation when you are typing
 
 function validationemail(){
     var form = document.getElementById("form");
@@ -54,7 +55,7 @@ function validationemail(){
     }
 }
 
-//password validation
+//password validation when you are typing
 
 function validationpassword(){
     var form = document.getElementById("form");

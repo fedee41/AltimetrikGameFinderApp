@@ -30,11 +30,15 @@ fetch(url, requestOptions)
       </div>
       <div class="box-date">
           <div class="box-aux">
+            <div class="box-aux">
             <p class="date">Realease date:</p>
             <p>${Change_date_format(onegame.released)}</p>
+            </div>
+            <div class="box-plataforms">
+              <svg id="svg_pc" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M20 9.16667H9.16667V1.53647L20 0V9.16667ZM8.33333 1.66667V9.16667H0V2.77865L8.33333 1.66667ZM8.33333 10H0V17.0992L8.33333 18.3333V10ZM9.16667 18.3262V10H20V20L9.16667 18.3262Z" fill="white"/>
+            </svg>
           </div>
-          <div class="box-plataforms">
-            ${Get_game_platform(onegame.parent_platforms)}
           </div>
           <div class="box-genres">
             <p class="date">Genres:</p>
@@ -44,7 +48,7 @@ fetch(url, requestOptions)
     </div>`
     var includegame = document.getElementById("includegame");
     includegame.innerHTML = ContentofGames;
-
+    Get_game_platform(onegame.platforms);
   };
 
   //Auxilar function to get genres and format well.
@@ -116,21 +120,19 @@ fetch(url, requestOptions)
     return date_format;
   };
 
+ 
   //Get the type of platform and insert the icon
   function Get_game_platform(platforms){
+    console.log(svgpc);
     //console.log(platforms);
-    var iconplatforms = '';
     let index = 0;
     for (index; index < platforms.length; index++) { 
       console.log(platforms[index].platform);
       switch (platforms[index].platform.slug) {
         case "pc":
             console.log("entre a pc");
-            iconplatforms = <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M20 9.16667H9.16667V1.53647L20 0V9.16667ZM8.33333 1.66667V9.16667H0V2.77865L8.33333 1.66667ZM8.33333 10H0V17.0992L8.33333 18.3333V10ZM9.16667 18.3262V10H20V20L9.16667 18.3262Z" fill="white"/>
-            </svg>;
+            
           break;
       }
     }
-    return iconplatforms;
   };
